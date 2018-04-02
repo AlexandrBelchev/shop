@@ -1,0 +1,595 @@
+// common
+body
+  margin 0
+  padding 0
+  font-size 16px
+  font-family 'HarmoniaSansRegular', sans-serif
+p
+  margin 0
+a
+  text-decoration none
+  cursor pointer
+ul
+  margin 0
+  padding 0
+h1, h2, h3, h4, h5, h6
+  margin 0
+.container
+  width 100%
+  padding 0 15px
+  margin 0 auto
+  text-align center
+.row
+  display flex
+  text-align center
+  align-items center
+  justify-content space-between
+.title--attention
+  color #ff5912
+.main
+  padding 120px 0
+  background-color #f4f6f8
+.subtitle
+  font-size 16px
+  color #495662
+  margin-top 25px
+.title
+  font-size 36px
+  color #34404b
+  text-transform uppercase
+
+//header
+.header
+  background #fff
+  &__item
+    border-bottom 1px solid rgba(230, 232, 235, .5)
+    box-sizing border-box
+    &--big
+      height 120px
+      .container
+        display flex
+        justify-content space-between
+        height 100%
+        align-items center
+  a
+    &:hover
+      color #ff5912
+  .row
+      height 60px
+  &__contact
+    width 250px
+    display flex
+    justify-content space-between
+    font-size 13px
+  .cart
+    position relative
+    &__quantity
+      position absolute
+      top -12px
+      left 1px
+      font-size 10px
+      color #fff
+      background-color #34404b
+      border-radius 50%
+      height 15px
+      width 15px
+      line-height 15px
+.contact
+  &__item
+    display flex
+    align-items center
+    color #34404b
+    i
+      color #ff5912
+  &__text
+    padding-left 5px
+.social
+  width 100px
+.list
+  display flex
+  justify-content space-between
+  list-style none
+  padding 0
+.header__buttons
+  width 125px
+  display flex
+  justify-content space-between
+  align-items center
+  a
+    font-size 16px
+.nav
+  width 447px
+  &__link
+    color #34404b
+    &:hover
+      color #ff5912
+
+// offers
+.container--offers
+  height 100%
+.offers
+  background url('../img/top-bg.png') no-repeat
+  background-size cover
+  width 100%
+  height 650px
+  &__description
+    text-align left
+  &__title
+    color #ff5912
+    font-size 52px
+  &__addition
+    font-size 18px
+    color #3c4751
+    line-height 30px
+    display block
+    margin 10px 0
+  &__price
+    color #34404b
+  &__buy
+    text-align left
+  .icon-cart
+    color #ff5912
+.offers__slider
+  align-items center
+  height 100%
+// cards
+
+.cards
+  display flex
+  justify-content space-between
+  flex-direction row
+  z-index 1
+  margin 80px 0
+  flex-wrap wrap
+  &__item
+    background-color #fff
+    box-shadow 0 5px 15px rgba(0, 0, 0, 0.1)
+    text-align center
+    width calc(25% - 30px)
+    padding 30px
+    box-sizing border-box
+    position relative
+    &:first-child
+      margin-bottom 30px
+    &+&
+      margin-bottom 30px
+    &:hover
+      .cards__front
+        opacity 0
+        transform rotateY(-180deg)
+      .feature
+        z-index 10
+        opacity 1
+        transform rotateY(0deg)
+  &__price
+    color #ff5912
+    font-size 18px
+    font-weight bold
+  &__title
+    margin 30px 0
+    font-size 18px
+    font-weight 400
+  &__front
+    transition .5s all ease
+    opacity 1
+    z-index 9
+    position relative
+.feature
+  position absolute
+  top 0
+  left 0
+  background-color #fff
+  padding 30px
+  height 100%
+  width 100%
+  box-sizing border-box
+  opacity 0
+  z-index 0
+  transition .5s all ease
+  transform rotateY(180deg)
+  &__title
+    color #ff5912
+    font-size 18px
+    font-weight bold
+    margin 30px 0
+    position relative
+  &__description
+    position relative
+    &:after
+      content ''
+      position absolute
+      height 1px
+      background #f2f4f7
+      bottom -30px
+      width 60%
+      left 50%
+      transform translateX(-50%)
+  &__image-wrapper
+    img
+      max-width 90px
+      height 90px
+  &__color
+    margin 30px auto
+    display flex
+    width 70px
+    justify-content space-between
+    a
+      width 13px
+      height 13px
+      display block
+      border-radius 50%
+  &__buttons
+    display flex
+    margin 0 auto
+    padding-top 30px
+    justify-content space-between
+    font-size 18px
+    width 60%
+    a
+      &:hover
+        color #ff5912
+.color
+  &__red
+    background-color #e12e3f
+  &__sapphire
+    background-color #34404b
+  &__blue
+    background-color #3ab3ff
+  &__green
+    background-color #2fd967
+
+.more-button
+  font-size 10px
+  color #ff5912
+  background-color #fff
+  padding 25px 0
+
+// recomended
+.recomended
+  padding 119px 0
+  &__item
+    background-color #fff
+    border 1px solid rgba(52, 64, 75, 0.05)
+    height 100px
+    box-sizing border-box
+    display flex
+    flex-direction column
+    justify-content center
+    padding 10px 60px
+    &--60
+      width calc(60% - 15px)
+      display flex
+      align-items center
+      flex-direction row
+      justify-content space-between
+    &--40
+      width calc(40% - 15px)
+  &__title
+    font-size 22px
+  &__subtitle
+    font-size 12px
+    margin-top 13px
+  &__sale
+    position relative
+    width 80px
+    height 80px
+    display flex
+    justify-content center
+    &-info
+      position absolute
+      z-index 2
+      top 50%
+      transform translateY(-50%)
+    &:after
+      content ''
+      position absolute
+      background-color #ff5912
+      width 51px
+      height 61px
+      top 50%
+      left -10px
+      transform translate(50%, -50%) rotate(45deg)
+    &:before
+      content ''
+      position absolute
+      background-color #ff5912
+      width 50px
+      height 63px
+      top 50%
+      left -9px
+      opacity 0.7
+      transform translate(50%, -50%) rotate(-45deg)
+  &__description
+    position relative
+    text-align left
+    &:after
+      content ''
+      width 1px
+      height 100%
+      background-color #f5f5f6
+      position absolute
+      top 0
+      right -37px
+  &__price
+    font-size 32px
+    color #ff5912
+    font-family 'HarmoniaSansBlack'
+  &__number
+    margin-left 10px
+
+// sales
+.sales
+  .cards__front,
+  .feature
+    display flex
+    align-items center
+    justify-content space-between
+    .cards__title
+      margin-top 0
+    .cards__price--sale
+      font-size 16px
+.cards__item--sales
+  width calc(33.33% - 30px)
+.or
+  display flex
+  justify-content space-between
+.raiting
+  .icon-star
+    margin 0 2px
+    color #edf0f6
+.add
+  transition .5s
+  &:hover
+    color #ff5912
+  &__text
+    margin-left 5px
+
+// newsletter
+.newsletter
+  input
+    border none
+  .icon-mail
+    color #ff5912
+  &__wrapper
+    background-color #fff
+    display flex
+    flex-direction row
+    justify-content space-between
+    align-items center
+    padding 36px 45px
+  &__heading
+    display flex
+  &__title
+    font-size 18px
+    color #ff5912
+    font-weight bold
+  &__subtitle
+    font-size 14px
+    color #34404b
+    font-style italic
+    margin-left 23px
+.input__submit
+  background-color #ff5912
+  padding 0
+  height 50px
+  width 100px
+  color #fff
+.form-control
+  display flex
+  align-items center
+.input__email
+  margin-left 10px
+.form
+  display flex
+  justify-content space-between
+  width 415px
+
+// footer
+.footer
+  padding 85px 0
+  background-color #fff
+  &__info
+    text-align left
+  &__block-list
+    width 485px
+    display flex
+    justify-content space-between
+  &__list
+    font-size 14px
+  &__item
+    text-align left
+    color #28313b
+    &+&
+      margin-top 15px
+    &:hover
+      color #ff5912
+    a
+      color #000
+      &:hover
+        color #ff5912
+.payment__title
+  font-size 16px
+  font-weight 400
+  color #ff5912
+  text-align left
+  font-family 'HarmoniaSansSemiBold'
+.payment__list
+  display flex
+  margin-top 19px
+.payment-method
+  height 19px
+  width 27px
+  background url('../img/payment-images.png') 0 0
+  display block
+  & + &
+    margin-left 9px
+.footer__copyright
+  font-size 14px
+.method-1
+  background-position 0 0
+.method-2
+  background-position -35px 0
+.method-3
+  background-position -71px 0
+.method-4
+  background-position -107px 0
+.method-5
+  background-position -143px 0
+
+
+
+// products
+//left column
+.column-left
+  width 268px
+.filter__box
+  background-color #fff
+  padding 40px
+  .form
+    display flex
+    flex-direction column
+    align-items left
+    width 100%
+.filter__title
+  color #ff5912
+  font-size 18px
+  font-family 'HarmoniaSansBlack'
+// product cards
+.row--products
+  align-items flex-start
+.products
+  margin 0
+  width calc(100% - 296px)
+  .cards__item
+    width calc(33.33% - 30px)
+.cards__item
+  display block
+.cards__item.is-passive
+  display none
+
+//view
+.view__galery
+  width 40%
+.view__info
+  width 60%
+  text-align left
+.view__order
+  display flex
+  justify-content space-between
+.feature__buttons--view
+  padding 0
+  margin 0
+  width auto
+
+@media (min-width: 320px)
+  .container
+    width 290px
+@media (min-width: 480px)
+  .container
+    width 450px
+@media (min-width: 720px)
+  .container
+    width 690px
+@media (min-width: 960px)
+  .container
+    width 930px
+@media (min-width: 1200px)
+  .container
+    width 1170px
+@font-face
+  font-family 'icomoon'
+  src url('../fonts/icomoon.eot?f629an')
+  src url('../fonts/icomoon.eot?f629an#iefix') format('embedded-opentype'),
+  url('../fonts/icomoon.ttf?f629an') format('truetype'),
+  url('../fonts/icomoon.woff?f629an') format('woff'),
+  url('../fonts/icomoon.svg?f629an#icomoon') format('svg')
+  font-weight normal
+  font-style normal
+
+@font-face
+  font-family 'HarmoniaSansBold'
+  src url('../fonts/HarmoniaSansProCyr-Bold.otf') format('opentype')
+  font-weight normal
+  font-style normal
+@font-face
+  font-family 'HarmoniaSansRegular'
+  src url('../fonts/HarmoniaSansProCyr-Regular.otf') format('opentype')
+  font-weight normal
+  font-style normal
+@font-face
+  font-family 'HarmoniaSansSemiBold'
+  src url('../fonts/HarmoniaSansProCyr-SemiBd.otf') format('opentype')
+  font-weight normal
+  font-style normal
+@font-face
+  font-family 'HarmoniaSansBlack'
+  src url('../fonts/HarmoniaSansProCyr-Black.otf') format('opentype')
+  font-weight normal
+  font-style normal
+
+[class^="icon-"], [class*=" icon-"]
+  font-family 'icomoon' !important
+  speak none
+  font-style normal
+  font-weight normal
+  font-variant normal
+  text-transform none
+  line-height 1
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+
+.icon-dots
+  &:before
+    content "\e906"
+
+.icon-mail
+  &:before
+    content "\e907"
+
+.icon-phone
+  &:before
+    content "\e905"
+
+.icon-search
+  &:before
+    content "\e986"
+
+.icon-google
+  &:before
+    content "\e900"
+
+.icon-instagram
+  &:before
+    content "\e901"
+
+.icon-facebook
+  &:before
+    content "\e902"
+
+.icon-cart
+  &:before
+    content "\e903"
+
+.icon-sphere
+  &:before
+    content "\e9c9"
+
+.icon-twitter
+  &:before
+    content "\ea96"
+
+.icon-add-to-cart
+  &:before
+    content "\e904"
+
+.icon-user-o
+  &:before
+    content "\e90a"
+
+.icon-heart
+  &:before
+    content "\e909"
+
+.icon-star
+  &:before
+    content "\e908"

@@ -1,0 +1,237 @@
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='initial-scale=1.0, width=device-width')
+        meta(http-equiv='X-UA-Compatible' content='ie=edge')
+        meta(name='description' content='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s')
+        meta(name='title' content='Shopno')
+        meta(name='keywords' content='shopno, SHOPNO, Shopno, shop')
+        meta(name='og:title' content='Shopno')
+        meta(name='og:description' content='Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s')
+        link(rel='stylesheet' href='css/stylesheet.css')
+        link(rel='stylesheet', type='text/css', href='libs/slick/slick.css')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Merriweather:400,700')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:400')
+        link(rel='stylesheet', href='libs/magnific-popup/dist/magnific-popup.css')
+        title shopno
+    body
+        header.header
+            .header__item
+                .container
+                    .row
+                        .header__contact.contact
+                            a.contact__item(href='mailto:info@shopy.com')
+                                i.icon-mail
+                                span.contact__text info@shopy.com
+                            a.contact__item(href='tel:996 - 5553 - 453')
+                                i.icon-phone
+                                span.contact__text 996 - 5553 - 453
+                        .header__social.social
+                            ul.social__list.list
+                                li.social__item
+                                    a.icon-facebook
+                                li.social__item
+                                    a.icon-twitter
+                                li.social__item
+                                    a.icon-google
+                                li.social__item
+                                    a.icon-instagram
+            .header__item.header__item--big
+                .container
+                    .logo
+                        a
+                            img(src='./img/logo.png' alt='')
+                    nav.nav
+                        ul.nav__list.list
+                            li.nav__item
+                                a.nav__link(href='index.html') Home
+                            li.nav__item
+                                a.nav__link(href='products.html') Product
+                            li.nav__item
+                                a.nav__link(href='#') Hot deals
+                            li.nav__item
+                                a.nav__link(href='#') About
+                            li.nav__item
+                                a.nav__link(href='#') Contact
+                    .header__buttons
+                        .button__search
+                            a.icon-search
+                        .button__user
+                            a.icon-user-o
+                        .button__cart
+                            a.icon-cart.cart
+                                span.cart__quantity 5
+        main.main
+            section.view
+                .container
+                    .row
+                        .view__galery
+                            img(src='./img/product-5.png')
+                        .view__info
+                            .view__text
+                                h2.offers__title FULL WINTER KIT
+                                span.offers__addition Half Jacket + Skiny Trousers + Boot leather
+                                p.offers__text Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry
+                            .view__choose
+                                .view__size Choose size: s - m - l - xl
+                                .view__quantity
+                                    a.counter.counter__plus +
+                                    input.quantity(type='number' name='quantity')
+                                    a.counter.counter__minus -
+                            .view__order
+                                span.total
+                                span.view__price 120
+                                .feature__buttons.feature__buttons--view
+                                    .share
+                                        a.icon-sphere
+                                    .add-to-cart
+                                        a.icon-add-to-cart
+                                    .wishlist
+                                        a.icon-heart
+                                    input.order(type='button' value='Order')
+            section.related
+                .container
+                    h2.title
+                        span.title--attention Related&nbsp
+                        |products
+                    h5.subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry
+
+                    .cards.related__cards
+                        -
+                            let cards=[
+                            {
+                            image:'./img/product-1.png',
+                            cards__title:'Reebok Track Jacket',
+                            cards__price:'100$'
+                            },
+                            {
+                            image:'./img/product-2.png',
+                            cards__title:'Reebok Track Jacket',
+                            cards__price:'100$'
+                            },
+                            {
+                            image:'./img/product-3.png',
+                            cards__title:'Reebok Track Jacket',
+                            cards__price:'100$'
+                            },
+                            {
+                            image:'./img/product-3.png',
+                            cards__title:'Reebok Track Jacket',
+                            cards__price:'100$'
+                            }
+                            ]
+                        each card, i in cards
+                            .cards__item
+                                .cards__feature.feature
+                                    .feature__description
+                                        .feature__image-wrapper
+                                            img(src=card.image)
+                                        .feature__title=card.cards__title
+                                        .feature__size sizes: s - m - l - xl
+                                        .feature__color.color
+                                            a.color__red
+                                            a.color__sapphire
+                                            a.color__blue
+                                            a.color__green
+                                    .feature__buttons
+                                        .share
+                                            a.icon-sphere
+                                        .add-to-cart
+                                            a.icon-add-to-cart
+                                        .wishlist
+                                            a.icon-heart
+                                .cards__front
+                                    .cards__image-wrapper
+                                        img(src=card.image)
+                                    .cards__title=card.cards__title
+                                    .cards__price 100$
+            section.newsletter
+                .container
+                    .newsletter__wrapper
+                        .newsletter__heading
+                            h3.newsletter__title News letter
+                            span.newsletter__subtitle join us now to get all news and special offers
+                        .form
+                            .form-control
+                                i.icon-mail
+                                input.input__email(type='text' placeholder='type your email here')
+                            input.input__submit(type='submit' value='Join us')
+        footer.footer
+            .container
+                .row
+                    .footer__info
+                        .footer__image-wrapper
+                            img(src='./img/logo.png')
+                        .footer__copyright
+                            p shopy c 2015. your copy right here
+                    .footer__block-list
+                        -
+                            let footer__block_1=[
+                            {
+                            footer__item:'about us',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'contact us',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'support',
+                            footer__link:'#'
+                            }
+                            ];
+                        -
+                            let footer__block_2=[
+                            {
+                            footer__item:'our feed',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'terms and conditions',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'our privacy',
+                            footer__link:'#'
+                            }
+                            ];
+                        -
+                            let footer__block_3=[
+                            {
+                            footer__item:'join us',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'live support',
+                            footer__link:'#'
+                            }
+                            ]
+                        ul.footer__list
+                            each footer__item, i in footer__block_1
+                                li.footer__item
+                                    a(href=footer__item.footer__link)=footer__item.footer__item
+                        ul.footer__list
+                            each footer__item, i in footer__block_2
+                                li.footer__item
+                                    a(href=footer__item.footer__link)=footer__item.footer__item
+                        ul.footer__list
+                            each footer__item, i in footer__block_3
+                                li.footer__item
+                                    a(href=footer__item.footer__link)=footer__item.footer__item
+                    .footer__payment
+                        h3.payment__title Payment Methods
+                        ul.payment__list
+                            li.method-1.payment-method
+                            li.method-2.payment-method
+                            li.method-3.payment-method
+                            li.method-4.payment-method
+                            li.method-5.payment-method
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+        script(src='js/main.js')
+        script(src='libs/slick/slick.js')
+        script(src='libs/jquery-validation-1.17.0/dist/jquery.validate.min.js')
+        script(src='libs/magnific-popup/dist/jquery.magnific-popup.min.js')
+
