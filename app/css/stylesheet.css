@@ -251,6 +251,11 @@ h6 {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
+  -webkit-transition: 2s -webkit-transform ease;
+  transition: 2s -webkit-transform ease;
+  -o-transition: 2s transform ease;
+  transition: 2s transform ease;
+  transition: 2s transform ease, 2s -webkit-transform ease;
 }
 .cards__item:first-child {
   margin-bottom: 30px;
@@ -258,16 +263,18 @@ h6 {
 .cards__item+.cards__item {
   margin-bottom: 30px;
 }
+.cards__item:hover {
+  -webkit-transform: rotate3d(0, 1, 0, 180deg);
+          transform: rotate3d(0, 1, 0, 180deg);
+/* transform rotateY(0deg)*/
+}
 .cards__item:hover .cards__front {
   opacity: 0;
-  -webkit-transform: rotateY(-180deg);
-          transform: rotateY(-180deg);
+/*transform rotateY(-180deg)*/
 }
 .cards__item:hover .feature {
   z-index: 10;
   opacity: 1;
-  -webkit-transform: rotateY(0deg);
-          transform: rotateY(0deg);
 }
 .cards__price {
   color: #ff5912;

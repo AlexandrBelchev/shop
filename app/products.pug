@@ -17,7 +17,7 @@ html(lang='en')
         link(rel='stylesheet', type='text/css', href='libs/magnific-popup/dist/magnific-popup.css')
         link(rel='stylesheet', type='text/css', href='libs/noUiSlider.11.0.3/nouislider.min.css')
         link(rel='stylesheet', type='text/css', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
-        link(rel='stylesheet', type='text/css', href='/resources/demos/style.css')
+        //link(rel='stylesheet', type='text/css', href='/resources/demos/style.css')
         title shopno
     body
         header.header
@@ -100,7 +100,7 @@ html(lang='en')
                                             .slider-range
                                         .form__control
                                             input.outp(type='text')
-                                            input.rangeput(type='range' min='100' max='1000')
+                                            input#slider(type='range')
                             .filter__box
                                 .filter__sizes
                                     h3.filter__title Sizes
@@ -141,63 +141,72 @@ html(lang='en')
                                         cards__title:'Reebok Track Jacket',
                                         cards__price:'100',
                                         brand:'reebok',
-                                        category:'man'
+                                        category:'man',
+                                        sizes:'m'
                                     },
                                     {
                                         image:'./img/product-3.png',
                                         cards__title:'addidas Track Jacket',
                                         cards__price:'100',
                                         brand:'addidas',
-                                        category:'man'
+                                        category:'man',
+                                        sizes:'s'
                                     },
                                     {
                                         image:'./img/product-3.png',
                                         cards__title:'reebok Track Jacket',
                                         cards__price:'200',
                                         brand:'reebok',
-                                        category:'woman'
+                                        category:'woman',
+                                        sizes:'x'
                                     },
                                     {
                                         image:'./img/product-2.png',
                                         cards__title:'active Track Jacket',
                                         cards__price:'300',
                                         brand:'active',
-                                        category:'woman'
+                                        category:'woman',
+                                        sizes:'s'
                                     },
                                     {
                                         image:'./img/product-1.png',
                                         cards__title:'nike Track Jacket',
                                         cards__price:'500',
                                         brand:'nike',
-                                        category:'children'
+                                        category:'children',
+                                        sizes:'x'
                                     },
                                     {
                                         image:'./img/product-3.png',
                                         cards__title:'active Track Jacket',
                                         cards__price:'600',
                                         brand:'active',
-                                        category:'children'
+                                        category:'children',
+                                        sizes:'xl'
                                     },
                                     {
                                         image:'./img/product-2.png',
                                         cards__title:'nike Track Jacket',
                                         cards__price:'1000',
                                         brand:'nike',
-                                        category:'hotDeals'
+                                        category:'hotDeals',
+                                        sizes:'xl'
                                     },
                                     {
                                         image:'./img/product-1.png',
                                         cards__title:'addidas Track Jacket',
                                         cards__price:'300',
                                         brand:'addidas',
-                                        category:'hotDeals'
+                                        category:'hotDeals',
+                                        sizes:'m'
                                     },
                                     {
                                         image:'./img/product-3.png',
                                         cards__title:'addidas Track Jacket',
                                         cards__price:'700',
                                         brand:'addidas',
-                                        category:'man'
+                                        category:'man',
+                                        sizes:'s'
                                     }
                                 ]
                             each card, i in cards
@@ -207,7 +216,7 @@ html(lang='en')
                                             .feature__image-wrapper
                                                 img(src=card.image)
                                             .feature__title(data-brand=card.brand)=card.cards__title
-                                            .feature__size(data-sizes='s m l xl') sizes: s - m - l - xl
+                                            .feature__size(data-sizes=card.sizes) sizes: s - m - l - xl
                                             .feature__color.color
                                                 a.color__red
                                                 a.color__sapphire
@@ -315,3 +324,4 @@ html(lang='en')
         script(src='libs/jquery-validation-1.17.0/dist/jquery.validate.min.js')
         script(src='libs/magnific-popup/dist/jquery.magnific-popup.min.js')
         script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+        link(rel='stylesheet', href='libs/noUiSlider.11.0.3/nouislider.min.css')

@@ -1,3 +1,49 @@
+window.onload=function () {
+let quantity = 1;
+let quantityEl = document.querySelector('.quantity');
+let _plus = document.querySelector('.counter__plus') ;
+let _minus = document.querySelector('.counter__minus');
+
+    _plus.onclick = function () {
+        quantity++;
+        quantityEl.value = quantity;
+    };
+    _minus.onclick = function () {
+        if (quantity > 1) {
+            quantity--;
+            quantityEl.value = quantity;
+        }
+    }
+};
+
+// flying image
+let order1 = document.querySelector('.order');
+let button__cart = document.querySelector('.button__cart');
+
+order1.onclick = function() {
+    let c = button__cart.getBoundingClientRect(),
+        scrolltop = document.body.scrollTop + c.top,
+        scrollleft = document.body.scrollLeft + c.left;
+    alert('top:' + scrolltop + ' left: ' + scrollleft + '');
+};
+let element = document.querySelector('.view__image');
+order1.onclick = function () {
+    let clone = element.cloneNode();
+    console.log(clone);
+    clone.style.position = 'absolute';
+    clone.style.left = '220px';
+    clone.style.top = '300px';
+    clone.style.display = 'block';
+    clone.style.transform = 'scale(0.5)';
+    clone.style.transition = '5s linear all';
+    let body = document.querySelector('body');
+    body.append(clone);
+    setTimeout( () => {
+        clone.style.left = '90%';
+        clone.style.top = '20px'
+
+    }, 100)
+};
 // main slider
 $(document).ready(function() {
     $('.offers__slider').slick({
@@ -12,7 +58,14 @@ $(document).ready(function() {
         infinite: true
     });
 
+//flip
+/*    $(".cards__item").flip({
+        axis: 'y',
+        trigger: 'hover'
+    });*/
 });
+
+
 /*
 window.onload= function () {
 var xmlhttp = new XMLHttpRequest();
@@ -76,7 +129,48 @@ function filter(filtersArray, elements) {
 
 
 
+// size filter
+let inputs6 = document.getElementsByClassName('form__size');
+let filterBtns6 = Array.from(inputs6);
+let arr6 = [];
+filterBtns6.forEach( function(el) {
+    el.onclick = function() {
+        console.log(el.value);
+        let value = el.value;
+        let index = arr6.indexOf(value);
+        if (index === -1) {
+            arr6.push(value)
+        } else {
+            arr6.splice(index, 1)
+        }
+        filter2(arr6, cards)
+    }
+});
+function filter6(filtersArray6, elements) {
+    let elArray = Array.from(elements);
+    if(filtersArray6.length) {
+        let newArr6 = elArray.filter(function(el) {
+            console.log(el);
+            return filtersArray6.some( filter6 => {
+                console.log(filter6, el.querySelector('.feature__size').dataset.sizes);
+                return el.querySelector('.feature__size').dataset.sizes == filter6;
+            })
+        });
+        console.log(newArr6);
 
+        elArray.forEach(function(el) {
+            el.classList.add('is-passive')
+        });
+        newArr6.forEach( function(el) {
+            el.classList.remove('is-passive')
+        })
+
+    } else {
+        elArray.forEach(function(el) {
+            el.classList.remove('is-passive')
+        })
+    }
+}
 
 
 
@@ -127,8 +221,21 @@ function filter2(filtersArray2, elements) {
             el.classList.remove('is-passive')
         })
     }
-}
+};
 
+
+
+
+
+
+
+
+
+
+
+
+let numberFrom;
+let numberTo;
 //init range slider
 $( function() {
     $( ".slider-range" ).slider({
@@ -138,8 +245,8 @@ $( function() {
         step: 10,
         values: [ 100, 1000 ],
         slide: function( event, ui ) {
-            $( ".from" ).val(ui.values[ 0 ]+"$" );
-            $( ".to" ).val(ui.values[ 1 ]+"$");
+            numberFrom=($( ".from" ).val(ui.values[ 0 ]+"$" ));
+            numberTo=$( ".to" ).val(ui.values[ 1 ]+"$");
         }
     });
     $( ".from" ).val($( ".slider-range" ).slider( "values", 0 )+"$");
@@ -151,37 +258,13 @@ let _from = document.querySelector('.from');
 let _to = document.querySelector('.to');
 let slider_range = document.querySelector('.slider-range');
 let arr3=[];
-slider_range.oninput = function() {
-    console.log(_from.value)
+slider_range.onchange = function() {
+    console.log(numberFrom)
 };
 let outp = document.querySelector('.outp');
 let rangeput = document.querySelector('.rangeput');
-    rangeput.oninput=function (qwe) {
+    rangeput.oninput=function (sd) {
     outp.value=rangeput.value
 };
 
 
-
-// total
-
-let priceEl = document.querySelector('.view__price');
-let elementTotal = document.querySelector('.total');
-let input = document.querySelector('.quantity');
-
-let price = +priceEl.innerHTML;
-input.onclick = function() {
-    getValue(event, price)
-};
-
-input.oninput = function() {
-    getValue(event, price)
-};
-
-function getValue(event, price) {
-    if(event.target.value < 1) {
-        event.target.value = 1
-    }
-    let quantity = event.target.value;
-    let total = quantity * price;
-    elementTotal.innerHTML = ' = ' + total + ' грн.'
-}

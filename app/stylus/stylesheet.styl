@@ -149,18 +149,20 @@ h1, h2, h3, h4, h5, h6
     padding 30px
     box-sizing border-box
     position relative
+    transition 2s transform ease
     &:first-child
       margin-bottom 30px
     &+&
       margin-bottom 30px
     &:hover
+      transform rotate3d(0, 1, 0, 180deg)
       .cards__front
         opacity 0
-        transform rotateY(-180deg)
+        /*transform rotateY(-180deg)*/
       .feature
         z-index 10
         opacity 1
-        transform rotateY(0deg)
+       /* transform rotateY(0deg)*/
   &__price
     color #ff5912
     font-size 18px

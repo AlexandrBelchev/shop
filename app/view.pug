@@ -68,7 +68,7 @@ html(lang='en')
                 .container
                     .row
                         .view__galery
-                            img(src='./img/product-5.png')
+                            img.view__image(src='./img/product-5.png')
                         .view__info
                             .view__text
                                 h2.offers__title FULL WINTER KIT
@@ -77,11 +77,10 @@ html(lang='en')
                             .view__choose
                                 .view__size Choose size: s - m - l - xl
                                 .view__quantity
-                                    a.counter.counter__plus +
-                                    input.quantity(type='number' name='quantity')
-                                    a.counter.counter__minus -
+                                    button.counter.counter__plus +
+                                    input.quantity(type='text' name='quantity' value='1')
+                                    button.counter.counter__minus -
                             .view__order
-                                span.total
                                 span.view__price 120
                                 .feature__buttons.feature__buttons--view
                                     .share
