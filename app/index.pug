@@ -1,4 +1,5 @@
 doctype html
+include includes/menu.pug
 html(lang='en')
     head
         meta(charset='UTF-8')
@@ -40,29 +41,54 @@ html(lang='en')
                                     a.icon-instagram
             .header__item.header__item--big
                 .container
-                        .logo
-                            a
-                                img(src='./img/logo.png' alt='')
-                        nav.nav
-                            ul.nav__list.list
-                                li.nav__item
-                                    a.nav__link(href='index.html') Home
-                                li.nav__item
-                                    a.nav__link(href='products.html') Product
-                                li.nav__item
-                                    a.nav__link(href='#') Hot deals
-                                li.nav__item
-                                    a.nav__link(href='#') About
-                                li.nav__item
-                                    a.nav__link(href='#') Contact
-                        .header__buttons
-                            .button__search
-                                a.icon-search
-                            .button__user
-                                a.icon-user-o
-                            .button__cart
-                                a.icon-cart.cart
-                                    span.cart__quantity 5
+                    .logo
+                        a
+                            img(src='./img/logo.png' alt='')
+                    nav.nav
+                        -
+                            let menus=[
+                            {
+                            link: 'http://localhost:3000/index.html',
+                            text: 'Home'
+                            },
+                            {
+                            link: 'http://localhost:3000/products.html',
+                            text: 'Product'
+                            },
+                            {
+                            link: '#',
+                            text: 'Hot deals'
+                            },
+                            {
+                            link: '#',
+                            text: 'About'
+                            },
+                            {
+                            link: '#',
+                            text: 'Contact'
+                            }
+                            ]
+                        .header__mobile.mobile
+                            span.mobile__item
+                            span.mobile__item
+                            span.mobile__item
+                        ul.nav__list.list
+                            +menu
+                        .header__sidebar.sidebar
+                            .sidebar__wrapper
+                                .sidebar__close
+                                    span.sidebar__item.mobile__item
+                                    span.sidebar__item.mobile__item
+                                ul.menu--mobile.menu
+                                    +menu
+                    .header__buttons
+                        .button__search
+                            a.icon-search
+                        .button__user
+                            a.icon-user-o
+                        .button__cart
+                            a.icon-cart.cart
+                                span.cart__quantity 5
         section.offers
             .container.container--offers
                 .offers__slider
@@ -219,44 +245,44 @@ html(lang='en')
                     .footer__block-list
                         -
                             let footer__block_1=[
-                                {
-                                    footer__item:'about us',
-                                    footer__link:'#'
-                                },
-                                {
-                                    footer__item:'contact us',
-                                    footer__link:'#'
-                                },
-                                {
-                                    footer__item:'support',
-                                    footer__link:'#'
-                                }
+                            {
+                            footer__item:'about us',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'contact us',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'support',
+                            footer__link:'#'
+                            }
                             ];
                         -
                             let footer__block_2=[
-                                {
-                                    footer__item:'our feed',
-                                    footer__link:'#'
-                                },
-                                {
-                                    footer__item:'terms and conditions',
-                                    footer__link:'#'
-                                },
-                                {
-                                    footer__item:'our privacy',
-                                    footer__link:'#'
-                                }
-                         ];
+                            {
+                            footer__item:'our feed',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'terms and conditions',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'our privacy',
+                            footer__link:'#'
+                            }
+                            ];
                         -
                             let footer__block_3=[
-                                {
-                                    footer__item:'join us',
-                                    footer__link:'#'
-                                },
-                                {
-                                    footer__item:'live support',
-                                    footer__link:'#'
-                                }
+                            {
+                            footer__item:'join us',
+                            footer__link:'#'
+                            },
+                            {
+                            footer__item:'live support',
+                            footer__link:'#'
+                            }
                             ]
                         ul.footer__list
                             each footer__item, i in footer__block_1

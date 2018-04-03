@@ -1,4 +1,5 @@
 doctype html
+include includes/menu.pug
 html(lang='en')
     head
         meta(charset='UTF-8')
@@ -47,17 +48,42 @@ html(lang='en')
                         a
                             img(src='./img/logo.png' alt='')
                     nav.nav
+                        -
+                            let menus=[
+                            {
+                            link: 'http://localhost:3000/index.html',
+                            text: 'Home'
+                            },
+                            {
+                            link: 'http://localhost:3000/products.html',
+                            text: 'Product'
+                            },
+                            {
+                            link: '#',
+                            text: 'Hot deals'
+                            },
+                            {
+                            link: '#',
+                            text: 'About'
+                            },
+                            {
+                            link: '#',
+                            text: 'Contact'
+                            }
+                            ]
+                        .header__mobile.mobile
+                            span.mobile__item
+                            span.mobile__item
+                            span.mobile__item
                         ul.nav__list.list
-                            li.nav__item
-                                a.nav__link(href='index.html') Home
-                            li.nav__item
-                                a.nav__link(href='products.html') Product
-                            li.nav__item
-                                a.nav__link(href='#') Hot deals
-                            li.nav__item
-                                a.nav__link(href='#') About
-                            li.nav__item
-                                a.nav__link(href='#') Contact
+                            +menu
+                        .header__sidebar.sidebar
+                            .sidebar__wrapper
+                                .sidebar__close
+                                    span.sidebar__item.mobile__item
+                                    span.sidebar__item.mobile__item
+                                ul.menu--mobile.menu
+                                    +menu
                     .header__buttons
                         .button__search
                             a.icon-search

@@ -54,8 +54,10 @@ h1, h2, h3, h4, h5, h6
   a
     &:hover
       color #ff5912
+  a.active
+    color #ff5912
   .row
-      height 60px
+    height 60px
   &__contact
     width 250px
     display flex
@@ -74,6 +76,80 @@ h1, h2, h3, h4, h5, h6
       height 15px
       width 15px
       line-height 15px
+.sidebar
+  width 250px
+  background #FFFFFF
+  box-shadow 0 0 5px 0 #000
+  right -100%
+  top 0
+  z-index 99999
+  position fixed
+  height 100vh
+  transition .5s all ease
+  .menu__item
+    border-bottom 1px solid #505050
+    height 40px
+    line-height 40px
+    padding-left 20px
+  &__wrapper
+    position relative
+  &__close
+    position absolute
+    width 30px
+    height 20px
+    left -50px
+    top 10px
+    cursor pointer
+  &__item
+    &:nth-child(1)
+      transform translateY(8px) rotate(-45deg)
+    &:nth-child(2)
+      transform rotate(45deg)
+.menu
+  list-style none
+  color #505050
+  font-size 20px
+  width 500px
+  padding 0
+  justify-content space-between
+  &--mobile
+    display block
+    width 250px
+  &--active
+    right 0
+  &__link
+    color #505050
+    transition 0.5s
+    &:hover
+      color #000
+.mobile
+  width 30px
+  height 20px
+  position absolute
+  right 15px
+  display block
+  cursor pointer
+  &--active
+    .mobile__item
+    &:nth-child(1)
+      transform translateY(8px) rotate(-45deg)
+    &:nth-child(2)
+      transform scale(0)
+    &:nth-child(3)
+      transform translateY(-8px) rotate(45deg)
+  &__item
+    transition .4s all ease
+    background-color #505050
+    height 4px
+    width 100%
+    position absolute
+    border-radius 2px
+    &:nth-child(1)
+      top 0px
+    &:nth-child(2)
+      top 8px
+    &:nth-child(3)
+      top 16px
 .contact
   &__item
     display flex
@@ -86,24 +162,33 @@ h1, h2, h3, h4, h5, h6
 .social
   width 100px
 .list
-  display flex
+  display none
   justify-content space-between
   list-style none
   padding 0
 .header__buttons
   width 125px
-  display flex
+  display none
   justify-content space-between
   align-items center
   a
     font-size 16px
 .nav
+  position relative
   width 447px
   &__link
     color #34404b
     &:hover
       color #ff5912
-
+@media (min-width: 960px)
+  .header__mobile
+    display none
+  .header__menu
+    display flex
+  .sidebar
+    display none
+  .list, .header__buttons
+    display flex
 // offers
 .container--offers
   height 100%
@@ -125,8 +210,14 @@ h1, h2, h3, h4, h5, h6
     margin 10px 0
   &__price
     color #34404b
+  &__text
+    color #495662
   &__buy
     text-align left
+    margin-top 30px
+    width 220px
+    display flex
+    justify-content space-between
   .icon-cart
     color #ff5912
 .offers__slider
@@ -145,7 +236,7 @@ h1, h2, h3, h4, h5, h6
     background-color #fff
     box-shadow 0 5px 15px rgba(0, 0, 0, 0.1)
     text-align center
-    width calc(25% - 30px)
+    width 100%
     padding 30px
     box-sizing border-box
     position relative
@@ -158,11 +249,11 @@ h1, h2, h3, h4, h5, h6
       transform rotate3d(0, 1, 0, 180deg)
       .cards__front
         opacity 0
-        /*transform rotateY(-180deg)*/
+      /*transform rotateY(-180deg)*/
       .feature
         z-index 10
         opacity 1
-       /* transform rotateY(0deg)*/
+  /* transform rotateY(0deg)*/
   &__price
     color #ff5912
     font-size 18px
@@ -330,8 +421,8 @@ h1, h2, h3, h4, h5, h6
       margin-top 0
     .cards__price--sale
       font-size 16px
-.cards__item--sales
-  width calc(33.33% - 30px)
+.cards__item.cards__item--sales
+  width 100%
 .or
   display flex
   justify-content space-between
@@ -463,7 +554,7 @@ h1, h2, h3, h4, h5, h6
   margin 0
   width calc(100% - 296px)
   .cards__item
-    width calc(33.33% - 30px)
+    width 100%
 .cards__item
   display block
 .cards__item.is-passive
@@ -492,12 +583,26 @@ h1, h2, h3, h4, h5, h6
 @media (min-width: 720px)
   .container
     width 690px
+  .cards__item,
+  .cards__item.cards__item--sales
+    width calc(50% - 30px)
 @media (min-width: 960px)
   .container
     width 930px
+  .cards__item,
+  .cards__item.cards__item--sales
+    width calc(33.33% - 30px)
+  .products
+    .cards__item
+      width calc(50% - 30px)
 @media (min-width: 1200px)
   .container
     width 1170px
+  .cards__item
+    width calc(25% - 30px)
+  .products
+    .cards__item
+      width calc(33.33% - 30px)
 @font-face
   font-family 'icomoon'
   src url('../fonts/icomoon.eot?f629an')
