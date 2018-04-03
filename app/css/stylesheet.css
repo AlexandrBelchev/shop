@@ -759,8 +759,9 @@ h6 {
   height: 50px;
   width: 100px;
   color: #fff;
+  cursor: pointer;
 }
-.form-control {
+.form__control {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;

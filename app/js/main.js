@@ -73,6 +73,26 @@ $('.mobile').bind('click', function() {
 $('.sidebar__close').bind('click', function() {
     $('.sidebar').removeClass('menu--active');
 });
+//validation
+
+jQuery.validator.addMethod("emailMethod", function(value, element) {
+    var pattern = /^\w+@[a-zA-Z_0-9]+?\.[a-zA-Z]{2,3}$/;
+    return this.optional(element) || pattern.test(value);
+});
+$('.form').validate({
+    rules: {
+        email: {
+            required: true,
+            emailMethod: true
+        }
+    },
+    messages: {
+        email: {
+            email: "Please enter a valid email address. (user@gmail.com)"
+        }
+    }
+});
+
 
 // main slider
 $(document).ready(function() {
