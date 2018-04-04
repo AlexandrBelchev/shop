@@ -54,7 +54,16 @@ window.onload=function () {
         }
     });
 }*/
+window.onload=function () {
 
+    function dodajAktywne(elem) {
+        let a = document.querySelector('.view__size');
+        for (i = 0; i < a.length; i++) {
+            a[i].classList.remove('active__size')
+        }
+        elem.classList.add('active__size');
+    }
+}
 
 $(function () {
     let $range = $(".range-slider"),

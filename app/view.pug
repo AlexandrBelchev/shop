@@ -70,12 +70,32 @@ html(lang='en')
                         .view__galery
                             img.view__image(src='./img/product-5.png')
                         .view__info
+                            -
+                                let cards2=[
+                                    {
+                                    size:'xl',
+                                    class:'active__size'
+                                    },
+                                    {
+                                    size:'m',
+                                    class:''
+                                    },
+                                    {
+                                    size:'x',
+                                    class:''
+                                    },
+                                    {
+                                    size:'s',
+                                    class:''
+                                    }
+                                ]
                             .view__text
                                 h2.offers__title FULL WINTER KIT
                                 span.offers__addition Half Jacket + Skiny Trousers + Boot leather
                                 p.offers__text Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry
                             .view__choose
-                                .view__size Choose size: s - m - l - xl
+                                each ca, i in cards2
+                                    a(class=ca.class).view__size=ca.size
                                 .view__quantity
                                     button.counter.counter__plus +
                                     input.quantity(type='text' name='quantity' value='1')
@@ -128,7 +148,8 @@ html(lang='en')
                                         .feature__image-wrapper
                                             img(src=card.image)
                                         .feature__title=card.cards__title
-                                        .feature__size sizes: s - m - l - xl
+                                        .feature__sizegulp
+
                                         .feature__color.color
                                             a.color__red
                                             a.color__sapphire
