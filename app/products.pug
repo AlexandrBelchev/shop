@@ -16,9 +16,8 @@ html(lang='en')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
         link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Raleway:400')
         link(rel='stylesheet', type='text/css', href='libs/magnific-popup/dist/magnific-popup.css')
-        link(rel='stylesheet', type='text/css', href='libs/noUiSlider.11.0.3/nouislider.min.css')
-        link(rel='stylesheet', type='text/css', href='//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css')
-        //link(rel='stylesheet', type='text/css', href='/resources/demos/style.css')
+        link(rel='stylesheet', type='text/css', href='libs/ion.rangeSlider-master/css/ion.rangeSlider.skinHTML5.css')
+        link(rel='stylesheet', type='text/css', href='libs/ion.rangeSlider-master/css/ion.rangeSlider.css')
         title shopno
     body
         header.header
@@ -118,15 +117,10 @@ html(lang='en')
                                     h3.filter__title Price Filter
                                     form.form
                                         .form__control
-                                            label From
-                                            input.from(type='text' name='from' readonly)
+                                            input.range-slider(type='text' name='range-slider' value='')
                                         .form__control
-                                            label To
-                                            input.to(type='text' name='to' readonly)
-                                            .slider-range
-                                        .form__control
-                                            input.outp(type='text')
-                                            input#slider(type='range')
+                                            input.range__from(type='text')
+                                            input.range__to(type='text')
                             .filter__box
                                 .filter__sizes
                                     h3.filter__title Sizes
@@ -259,7 +253,7 @@ html(lang='en')
                                         .cards__image-wrapper
                                             img(src=card.image)
                                         .cards__title(data-brand=card.brand)=card.cards__title
-                                        .cards__price=card.cards__price+'$'
+                                        .cards__price=card.cards__price
                     .more-button
                         a.icon-dots
             section.newsletter
@@ -349,5 +343,4 @@ html(lang='en')
         script(src='libs/slick/slick.js')
         script(src='libs/jquery-validation-1.17.0/dist/jquery.validate.min.js')
         script(src='libs/magnific-popup/dist/jquery.magnific-popup.min.js')
-        script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
-        link(rel='stylesheet', href='libs/noUiSlider.11.0.3/nouislider.min.css')
+        script(src='libs/ion.rangeSlider-master/js/ion.rangeSlider.js')

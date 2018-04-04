@@ -785,6 +785,10 @@ h6 {
           justify-content: space-between;
   width: 415px;
 }
+.filter__price .form__control,
+.filter__price .form__control .irs {
+  width: 100%;
+}
 .footer {
   padding: 85px 0;
   background-color: #fff;
