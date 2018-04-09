@@ -230,30 +230,31 @@ html(lang='en')
                                     }
                                 ]
                             each card, i in cards
-                                .cards__item
-                                    .cards__feature.feature
-                                        .feature__description
-                                            .feature__image-wrapper
+                                .flip-container
+                                    .cards__item.flipper
+                                        .cards__feature.feature
+                                            .feature__description
+                                                .feature__image-wrapper
+                                                    img(src=card.image)
+                                                .feature__title(data-brand=card.brand)=card.cards__title
+                                                .feature__size(data-sizes=card.sizes) sizes: s - m - l - xl
+                                                .feature__color.color
+                                                    a.color__red
+                                                    a.color__sapphire
+                                                    a.color__blue
+                                                    a.color__green
+                                            .feature__buttons
+                                                .share
+                                                    a.icon-sphere
+                                                .add-to-cart
+                                                    a.icon-add-to-cart
+                                                .wishlist
+                                                    a.icon-heart
+                                        .cards__front(data-category=card.category)
+                                            .cards__image-wrapper
                                                 img(src=card.image)
-                                            .feature__title(data-brand=card.brand)=card.cards__title
-                                            .feature__size(data-sizes=card.sizes) sizes: s - m - l - xl
-                                            .feature__color.color
-                                                a.color__red
-                                                a.color__sapphire
-                                                a.color__blue
-                                                a.color__green
-                                        .feature__buttons
-                                            .share
-                                                a.icon-sphere
-                                            .add-to-cart
-                                                a.icon-add-to-cart
-                                            .wishlist
-                                                a.icon-heart
-                                    .cards__front(data-category=card.category)
-                                        .cards__image-wrapper
-                                            img(src=card.image)
-                                        .cards__title(data-brand=card.brand)=card.cards__title
-                                        .cards__price=card.cards__price
+                                            .cards__title(data-brand=card.brand)=card.cards__title
+                                            .cards__price=card.cards__price
                     .more-button
                         a.icon-dots
             section.newsletter

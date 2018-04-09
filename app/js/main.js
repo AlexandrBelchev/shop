@@ -1,3 +1,23 @@
+window.html5 = {
+    'elements': 'mark section customelement'
+};
+
+// main slider
+$(document).ready(function () {
+    $('.offers__slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        dots: true
+    });
+    $(".lazy").slick({
+        lazyLoad: 'ondemand',
+        infinite: true
+    });
+});
+
+
 /*window.onload=function () {
 let quantity = 1;
 let quantityEl = document.querySelector('.quantity');
@@ -143,22 +163,7 @@ $(function () {
 });
 
 
-// main slider
-    $(document).ready(function () {
-        $('.offers__slider').slick({
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 3000,
-            dots: true
-        });
-        $(".lazy").slick({
-            lazyLoad: 'ondemand',
-            infinite: true
-        });
 
-
-    });
 
 
     /*

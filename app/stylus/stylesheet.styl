@@ -225,11 +225,35 @@ h1, h2, h3, h4, h5, h6
   height 100%
 // cards
 
+.flip-container
+  perspective 1000px
+  width 80%
+  margin 0 auto
+  &:first-child
+    margin-bottom 30px
+  &+&
+    margin-bottom 30px
+  &:hover .flipper, &.hover .flipper
+    transform rotateY(180deg)
+.flipper
+  transition 0.3s
+  transform-style preserve-3d
+.cards__front, .feature
+  backface-visibility hidden
+  position absolute
+  top 0
+  left 0
+.cards__front
+  z-index 2
+  transform rotateY(0deg)
+.feature
+  z-index 3
+  transform rotateY(180deg)
+
 .cards
   display flex
   justify-content space-between
   flex-direction row
-  z-index 1
   margin 80px 0
   flex-wrap wrap
   &__item
@@ -241,18 +265,6 @@ h1, h2, h3, h4, h5, h6
     box-sizing border-box
     position relative
     transition 2s transform ease
-    &:first-child
-      margin-bottom 30px
-    &+&
-      margin-bottom 30px
-    &:hover
-      transform rotate3d(0, 1, 0, 180deg)
-      .cards__front
-        opacity 0
-      /*transform rotateY(-180deg)*/
-      .feature
-        z-index 10
-        opacity 1
   /* transform rotateY(0deg)*/
   &__price
     color #ff5912
@@ -265,21 +277,13 @@ h1, h2, h3, h4, h5, h6
   &__front
     transition .5s all ease
     opacity 1
-    z-index 9
     position relative
 .feature
-  position absolute
-  top 0
-  left 0
   background-color #fff
   padding 30px
   height 100%
   width 100%
   box-sizing border-box
-  opacity 0
-  z-index 0
-  transition .5s all ease
-  transform rotateY(180deg)
   &__title
     color #ff5912
     font-size 18px
@@ -421,8 +425,6 @@ h1, h2, h3, h4, h5, h6
       margin-top 0
     .cards__price--sale
       font-size 16px
-.cards__item.cards__item--sales
-  width 100%
 .or
   display flex
   justify-content space-between
@@ -557,7 +559,7 @@ h1, h2, h3, h4, h5, h6
 .products
   margin 0
   width calc(100% - 296px)
-  .cards__item
+  .flip-container
     width 100%
 .cards__item
   display block
@@ -587,25 +589,27 @@ h1, h2, h3, h4, h5, h6
 @media (min-width: 720px)
   .container
     width 690px
-  .cards__item,
-  .cards__item.cards__item--sales
+  .flip-container
     width calc(50% - 30px)
+    margin 0
 @media (min-width: 960px)
   .container
     width 930px
-  .cards__item,
-  .cards__item.cards__item--sales
+  .flip-container,
+  .flip-container--sales
     width calc(33.33% - 30px)
   .products
-    .cards__item
+    .flip-container
       width calc(50% - 30px)
 @media (min-width: 1200px)
   .container
     width 1170px
-  .cards__item
+  .flip-container
     width calc(25% - 30px)
+  .flip-container--sales
+    width calc(33.33% - 30px)
   .products
-    .cards__item
+    .flip-container
       width calc(33.33% - 30px)
 @font-face
   font-family 'icomoon'

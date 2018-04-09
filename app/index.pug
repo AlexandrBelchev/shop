@@ -152,30 +152,31 @@ html(lang='en')
                                 }
                             ]
                         each card, i in cards
-                            .cards__item
-                                .cards__feature.feature
-                                    .feature__description
-                                        .feature__image-wrapper
+                            .flip-container
+                                .cards__item.flipper
+                                    .cards__feature.feature
+                                        .feature__description
+                                            .feature__image-wrapper
+                                                img(src=card.image)
+                                            .feature__title=card.cards__title
+                                            .feature__size sizes: s - m - l - xl
+                                            .feature__color.color
+                                                a.color__red
+                                                a.color__sapphire
+                                                a.color__blue
+                                                a.color__green
+                                        .feature__buttons
+                                            .share
+                                                a.icon-sphere
+                                            .add-to-cart
+                                                a.icon-add-to-cart
+                                            .wishlist
+                                                a.icon-heart
+                                    .cards__front
+                                        .cards__image-wrapper
                                             img(src=card.image)
-                                        .feature__title=card.cards__title
-                                        .feature__size sizes: s - m - l - xl
-                                        .feature__color.color
-                                            a.color__red
-                                            a.color__sapphire
-                                            a.color__blue
-                                            a.color__green
-                                    .feature__buttons
-                                        .share
-                                            a.icon-sphere
-                                        .add-to-cart
-                                            a.icon-add-to-cart
-                                        .wishlist
-                                            a.icon-heart
-                                .cards__front
-                                    .cards__image-wrapper
-                                        img(src=card.image)
-                                    .cards__title=card.cards__title
-                                    .cards__price 100$
+                                        .cards__title=card.cards__title
+                                        .cards__price 100$
                     .more-button
                         a.icon-dots
             section.recomended
@@ -204,25 +205,26 @@ html(lang='en')
                     h5.subtitle Lorem Ipsum is simply dummy text of the printing and typesetting industry
                     .cards
                         -for(let i = 0; i<3; i++)
-                            .cards__item.cards__item--sales
-                                .cards__front
-                                    .cards__image-wrapper
-                                        img(src='./img/product-4.png')
-                                    .cards_info
-                                        .cards__title Reebok Track Jacket
-                                        .or
-                                            .raiting
-                                                -for(let i = 0; i<5; i++)
-                                                    i.icon-star
-                                            .cards__price.cards__price--sale 100$
-                                .cards__feature.feature
-                                    .feature__image-wrapper
-                                        img(src='./img/product-4.png')
-                                    .cards_info
-                                        .cards__title Reebok Track Jacket
-                                        a.cards__add.add
-                                            i.icon-add-to-cart
-                                            span.add__text add to cart
+                            .flip-container.flip-container--sales
+                                .cards__item.flipper
+                                    .cards__front
+                                        .cards__image-wrapper
+                                            img(src='./img/product-4.png')
+                                        .cards_info
+                                            .cards__title Reebok Track Jacket
+                                            .or
+                                                .raiting
+                                                    -for(let i = 0; i<5; i++)
+                                                        i.icon-star
+                                                .cards__price.cards__price--sale 100$
+                                    .cards__feature.feature
+                                        .feature__image-wrapper
+                                            img(src='./img/product-4.png')
+                                        .cards_info
+                                            .cards__title Reebok Track Jacket
+                                            a.cards__add.add
+                                                i.icon-add-to-cart
+                                                span.add__text add to cart
             section.newsletter
                 .container
                     .newsletter__wrapper
@@ -312,4 +314,6 @@ html(lang='en')
         script(src='libs/magnific-popup/dist/jquery.magnific-popup.min.js')
         script(src='libs/flip-master/dist/jquery.flip.min.js')
         script(src='libs/jquery-validation-1.17.0/dist/jquery.validate.min.js')
+        script(src='https://cdn.polyfill.io/v2/polyfill.js?features=Array.prototype.map,modernizr:es5array|always')
+
 
