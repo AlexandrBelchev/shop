@@ -38,6 +38,80 @@ h1, h2, h3, h4, h5, h6
   color #34404b
   text-transform uppercase
 
+//https://codepen.io/remcokalf/pen/BNxLMJ
+//https://ru.stackoverflow.com/questions/655967/%D0%9E%D0%B1%D1%80%D0%B5%D0%B7%D0%B0%D1%82%D1%8C-%D1%83%D0%B3%D0%BB%D1%8B-border-css
+//https://stackoverflow.com/questions/7324722/cut-corners-using-css
+//https://stackoverflow.com/questions/7324722/cut-corners-using-css/26241310#26241310
+//https://stackoverflow.com/questions/46318462/how-to-cut-a-corner-with-css-when-background-image-is-necessary?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+.wrapper
+  position relative
+  margin 50px
+  width 100px
+  height 40px
+  line-height 40px
+  font-family Roboto, sans-serif
+  font-size 16px
+  font-weight bold
+  text-align center
+  border-top 2px solid #f00
+  border-bottom 2px solid #f00
+  transform-origin 50% 100% 0
+  &::before
+    left -15px
+    bottom -2px
+    border-left 2px solid #f00
+    border-bottom 2px solid #f00
+  &::after
+    right -15px
+    top -2px
+    border-top 2px solid #f00
+    border-right 2px solid #f00
+
+.wrapper::before,
+.wrapper::after
+  position absolute
+  content ''
+  width 15px
+  height 27px
+
+.corner
+  position absolute
+  width 21px
+  height 21px
+  transform 50% 50% 0
+  transform rotate(45deg)
+
+.left
+  top 3px
+  left -11px
+  border-left 2px solid #f00
+
+.right
+  bottom 3px
+  right -11px
+  border-right 2px solid #f00
+
+
+
+
+
+
+
+.cut-corner
+  height 100px
+  width 200px
+  background-image linear-gradient(to bottom left, transparent 50%, beige 50%), linear-gradient(beige, beige), linear-gradient(beige, beige)
+  background-size 25px 25px, 100% 100%, 100% 100%
+  background-position 100% 0%, -25px 0%, 100% 25px
+  background-repeat no-repeat
+
+.filled
+  background-image linear-gradient(black, black), linear-gradient(black, black), linear-gradient(black, black), linear-gradient(black, black), linear-gradient(to bottom left, transparent calc(50% - 1px), black calc(50% - 1px), black calc(50% + 1px), beige calc(50% + 1px)), linear-gradient(beige, beige), linear-gradient(beige, beige)
+  background-size 2px 100%, 2px 100%, 100% 2px, 100% 2px, 25px 25px, 100% 100%, 100% 100%
+  background-position 0% 0%, 100% 25px, -25px 0%, 0px 100%, 100% 0%, -25px 0%, 100% 25px
+  &:hover
+    background-image linear-gradient(black, black), linear-gradient(black, black), linear-gradient(black, black), linear-gradient(black, black), linear-gradient(to bottom left, transparent calc(50% - 1px), black calc(50% - 1px), black calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(transparent, transparent), linear-gradient(transparent, transparent)
 //header
 .header
   background #fff

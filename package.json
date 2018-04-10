@@ -27,6 +27,7 @@
     "gulp-pug": "^3.3.0",
     "gulp-rename": "^1.2.2",
     "gulp-stylus": "^2.7.0",
-    "imagemin-pngquant": "^5.1.0"
+    "imagemin-pngquant": "^5.1.0",
+    "polyfills": "^2.1.1"
   }
 }

@@ -61,6 +61,87 @@ h6 {
   color: #34404b;
   text-transform: uppercase;
 }
+.wrapper {
+  position: relative;
+  margin: 50px;
+  width: 100px;
+  height: 40px;
+  line-height: 40px;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  border-top: 2px solid #f00;
+  border-bottom: 2px solid #f00;
+  -webkit-transform-origin: 50% 100% 0;
+      -ms-transform-origin: 50% 100% 0;
+          transform-origin: 50% 100% 0;
+}
+.wrapper::before {
+  left: -15px;
+  bottom: -2px;
+  border-left: 2px solid #f00;
+  border-bottom: 2px solid #f00;
+}
+.wrapper::after {
+  right: -15px;
+  top: -2px;
+  border-top: 2px solid #f00;
+  border-right: 2px solid #f00;
+}
+.wrapper::before,
+.wrapper::after {
+  position: absolute;
+  content: '';
+  width: 15px;
+  height: 27px;
+}
+.corner {
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  -webkit-transform: 50% 50% 0;
+      -ms-transform: 50% 50% 0;
+          transform: 50% 50% 0;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.left {
+  top: 3px;
+  left: -11px;
+  border-left: 2px solid #f00;
+}
+.right {
+  bottom: 3px;
+  right: -11px;
+  border-right: 2px solid #f00;
+}
+.cut-corner {
+  height: 100px;
+  width: 200px;
+  background-image: -webkit-gradient(linear, right top, left bottom, color-stop(50%, transparent), color-stop(50%, #f5f5dc)), -webkit-gradient(linear, left top, left bottom, from(#f5f5dc), to(#f5f5dc)), -webkit-gradient(linear, left top, left bottom, from(#f5f5dc), to(#f5f5dc));
+  background-image: -webkit-linear-gradient(top right, transparent 50%, #f5f5dc 50%), -webkit-linear-gradient(#f5f5dc, #f5f5dc), -webkit-linear-gradient(#f5f5dc, #f5f5dc);
+  background-image: -o-linear-gradient(top right, transparent 50%, #f5f5dc 50%), -o-linear-gradient(#f5f5dc, #f5f5dc), -o-linear-gradient(#f5f5dc, #f5f5dc);
+  background-image: linear-gradient(to bottom left, transparent 50%, #f5f5dc 50%), linear-gradient(#f5f5dc, #f5f5dc), linear-gradient(#f5f5dc, #f5f5dc);
+  -webkit-background-size: 25px 25px, 100% 100%, 100% 100%;
+          background-size: 25px 25px, 100% 100%, 100% 100%;
+  background-position: 100% 0%, -25px 0%, 100% 25px;
+  background-repeat: no-repeat;
+}
+.filled {
+  background-image: -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(top right, transparent -webkit-calc(50% - 1px), #000 -webkit-calc(50% - 1px), #000 -webkit-calc(50% + 1px), #f5f5dc -webkit-calc(50% + 1px)), -webkit-linear-gradient(#f5f5dc, #f5f5dc), -webkit-linear-gradient(#f5f5dc, #f5f5dc);
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(#000, #000), -o-linear-gradient(#000, #000), -o-linear-gradient(#000, #000), -o-linear-gradient(top right, transparent calc(50% - 1px), #000 calc(50% - 1px), #000 calc(50% + 1px), #f5f5dc calc(50% + 1px)), -o-linear-gradient(#f5f5dc, #f5f5dc), -o-linear-gradient(#f5f5dc, #f5f5dc);
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(to bottom left, transparent calc(50% - 1px), #000 calc(50% - 1px), #000 calc(50% + 1px), #f5f5dc calc(50% + 1px)), linear-gradient(#f5f5dc, #f5f5dc), linear-gradient(#f5f5dc, #f5f5dc);
+  -webkit-background-size: 2px 100%, 2px 100%, 100% 2px, 100% 2px, 25px 25px, 100% 100%, 100% 100%;
+          background-size: 2px 100%, 2px 100%, 100% 2px, 100% 2px, 25px 25px, 100% 100%, 100% 100%;
+  background-position: 0% 0%, 100% 25px, -25px 0%, 0px 100%, 100% 0%, -25px 0%, 100% 25px;
+}
+.filled:hover {
+  background-image: -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(#000, #000), -webkit-linear-gradient(top right, transparent -webkit-calc(50% - 1px), #000 -webkit-calc(50% - 1px), #000 -webkit-calc(50% + 1px), transparent -webkit-calc(50% + 1px)), -webkit-linear-gradient(transparent, transparent), -webkit-linear-gradient(transparent, transparent);
+  background-image: -o-linear-gradient(#000, #000), -o-linear-gradient(#000, #000), -o-linear-gradient(#000, #000), -o-linear-gradient(#000, #000), -o-linear-gradient(top right, transparent calc(50% - 1px), #000 calc(50% - 1px), #000 calc(50% + 1px), transparent calc(50% + 1px)), -o-linear-gradient(transparent, transparent), -o-linear-gradient(transparent, transparent);
+  background-image: linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(#000, #000), linear-gradient(to bottom left, transparent calc(50% - 1px), #000 calc(50% - 1px), #000 calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(transparent, transparent), linear-gradient(transparent, transparent);
+}
 .header {
   background: #fff;
 }
